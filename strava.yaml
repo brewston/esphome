@@ -62,6 +62,7 @@ font:
     glyphs:
       - "\U000F00A3" # Bike
       - "\U000F0514" # Thumbs up
+      - "\U000F0E17" # Calendar
       
  
   - file: 'Roboto-Medium.ttf'
@@ -118,7 +119,7 @@ display:
       it.printf(55, 20, id(roboto), "%.f", id(kudos).state);
       it.print(125, 20, id(roboto), "Kudos");
       
-      it.printf(0, 47, id(icon_font_30), "\U000F00A3");
+      it.printf(0, 47, id(icon_font_30), "\U000F0E17");
       it.printf(55, 47, id(roboto), "%.f", id(milestoyear).state);
       it.print(125, 47, id(roboto), "Miles this year");
       

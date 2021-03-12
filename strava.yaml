@@ -54,7 +54,8 @@ sensor:
     
     
 font:
-
+  # Fonts need to exist in config/esphome
+  
   - file: 'materialdesignicons-webfont.ttf'
     id: icon_font_30
     size: 30

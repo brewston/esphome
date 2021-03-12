@@ -1,0 +1,126 @@
+esphome:
+  name: strava
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi
+  password: !secret wifi_pass
+  
+  
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "strava Fallback Hotspot"
+    password: "gfLpr3vVXg9U"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# All the these sensors came after setting up https://github.com/codingcyclist/ha_strava
+# The names are slightly different as I used these templates to convert Km to miles :
+# 
+#          strava_miles_to_date:
+#            friendly_name: 'Strava Miles Cycled to Date'
+#            The original sensor has a trailing 'km' so we split out the first bit, covert to int and convert to miles
+#            value_template: "{{ (states('sensor.strava_stats_summary_all_ride_distance').split(' ')[0] |int * 0.62)}}"
+#            unique_id: stravamilestodate
+          
+#         strava_miles_this_year:
+#           friendly_name: 'Strava Miles Cycled This Year'
+#           value_template: "{{ (states('sensor.strava_stats_summary_ytd_ride_distance').split(' ')[0] |int * 0.62)}}"
+#           unique_id: straaemilesthisyear
+
+sensor:
+  - platform: homeassistant
+    entity_id: sensor.strava_0_5
+    id: kudos
+  - platform: homeassistant
+    entity_id: sensor.strava_miles_to_date_2
+    id: milestodate
+  - platform: homeassistant
+    entity_id: sensor.strava_miles_this_year
+    id: milestoyear
+  - platform: homeassistant
+    entity_id: sensor.strava_stats_summary_ytd_ride_activity_count
+    id: ridestoyear
+    
+    
+font:
+
+  - file: 'materialdesignicons-webfont.ttf'
+    id: icon_font_30
+    size: 30
+    glyphs:
+      - "\U000F00A3" # Bike
+      - "\U000F0514" # Thumbs up
+      
+ 
+  - file: 'Roboto-Medium.ttf'
+    id: roboto
+    size: 25
+    glyphs: 
+      ['&', '@', '!', ',', '.', '"', '%', '+', '-', '_', ':', '°', '0',
+        '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E',
+        'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+        'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
+        'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+        'u', 'v', 'w', 'x', 'y', 'z', '/', 'è']
+        
+   
+  # I used https://fontdrop.info/ to find the correct unicode for this glyph
+  - file: 'la-brands-400.ttf'
+    id: strava_font
+    size: 50
+    glyphs:
+      - "\U0000F428" #Strava
+
+      
+# Example configuration entry
+spi:
+  clk_pin: D0
+  mosi_pin: D1
+  
+time:
+  - platform: homeassistant
+    id: homeassistant_time 
+
+
+
+
+display:
+  - platform: waveshare_epaper
+    cs_pin: D2
+    dc_pin: D6
+    busy_pin: D7
+    reset_pin: D5
+    model: 2.90in
+    rotation: 90
+    full_update_every: 6000
+    update_interval: 10s
+    
+    
+    
+    lambda: |-
+     
+
+      it.print(250, 0, id(strava_font), "\U0000F428");
+      
+      it.printf(0, 20, id(icon_font_30), "\U000F0514");
+      it.printf(55, 20, id(roboto), "%.f", id(kudos).state);
+      it.print(125, 20, id(roboto), "Kudos");
+      
+      it.printf(0, 47, id(icon_font_30), "\U000F00A3");
+      it.printf(55, 47, id(roboto), "%.f", id(milestoyear).state);
+      it.print(125, 47, id(roboto), "Miles this year");
+      
+      it.printf(0, 74, id(icon_font_30), "\U000F00A3");
+      it.printf(55, 74, id(roboto), "%.f", id(milestodate).state);
+      it.print(125, 74, id(roboto), "Miles to date");

@@ -37,6 +37,8 @@ ota:
 #           friendly_name: 'Strava Miles Cycled This Year'
 #           value_template: "{{ (states('sensor.strava_stats_summary_ytd_ride_distance').split(' ')[0] |int * 0.62)}}"
 #           unique_id: straaemilesthisyear
+#
+# The kudos sensor is a bit lame as it only shows kudos from my last activity, I would like it to show accumulated kudos for the month/year really
 
 sensor:
   - platform: homeassistant

@@ -24,7 +24,7 @@ api:
 
 ota:
 
-# All the these sensors came after setting up https://github.com/codingcyclist/ha_strava
+# All the these strava sensors came after setting up https://github.com/codingcyclist/ha_strava
 # The names are slightly different as I used these templates to convert Km to miles :
 # 
 #          strava_miles_to_date:
@@ -54,6 +54,11 @@ sensor:
     entity_id: sensor.strava_stats_summary_ytd_ride_activity_count
     id: ridestoyear
     
+# Added google fit sensor for steps  
+
+  - platform: homeassistant
+    entity_id: sensor.google_fit_steps
+    id: stepstoday
     
 font:
   # Fonts need to exist in config/esphome
@@ -65,6 +70,8 @@ font:
       - "\U000F00A3" # Bike
       - "\U000F0514" # Thumbs up
       - "\U000F0E17" # Calendar
+      - "\U000F0583" # Walking
+
       
  
   - file: 'Roboto-Medium.ttf'
@@ -119,12 +126,16 @@ display:
       
       it.printf(0, 20, id(icon_font_30), "\U000F0514");
       it.printf(55, 20, id(roboto), "%.f", id(kudos).state);
-      it.print(125, 20, id(roboto), "Kudos");
+      it.print(130, 20, id(roboto), "Kudos");
       
       it.printf(0, 47, id(icon_font_30), "\U000F0E17");
       it.printf(55, 47, id(roboto), "%.f", id(milestoyear).state);
-      it.print(125, 47, id(roboto), "Miles this year");
+      it.print(130, 47, id(roboto), "Miles this year");
       
       it.printf(0, 74, id(icon_font_30), "\U000F00A3");
       it.printf(55, 74, id(roboto), "%.f", id(milestodate).state);
-      it.print(125, 74, id(roboto), "Miles to date");
+      it.print(130, 74, id(roboto), "Miles to date");
+      
+      it.printf(0, 101, id(icon_font_30), "\U000F0583");
+      it.printf(55, 101, id(roboto), "%.f", id(stepstoday).state);
+      it.print(130, 101, id(roboto), "Steps today");

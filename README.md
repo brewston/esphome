@@ -3,7 +3,7 @@
 
 Some instructions if you came here via https://www.reddit.com/r/Strava/comments/m3s6rm/i_made_a_thing/
 
-Pre-reqs 
+Pre-reqs :
 
 A working home assistant (HA) installation - see https://www.home-assistant.io/installation/
 
@@ -18,7 +18,7 @@ Once you have the sensors created in HA and can happily display them on your das
 
 I used :
    
-    NodeMCU ESP8266 microcontroller eg 
+NodeMCU ESP8266 microcontroller eg 
     
  https://www.amazon.co.uk/YIYUAN-ESP8266-ESP-12E-Internet-Development-black/dp/B08MT97XCK/ref=sr_1_1_sspa?crid=D1C11Z218YSB&dchild=1&keywords=nodemcu+esp8266&qid=1615714875&sprefix=nodemc%2Caps%2C155&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzMFhLUVNFSVlGSFNYJmVuY3J5cHRlZElkPUEwODU3NDMzMk1DVEJRNDFGREg0WSZlbmNyeXB0ZWRBZElkPUEwMjI0OTM2MTBHRTNYNEVXQUM5RCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=
  

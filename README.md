@@ -92,6 +92,6 @@ sensor:
     entity_id: sensor.google_fit_steps
     id: stepstoday
  
- In the case of the strava stats, I renamed them in HA to covert Km to Miles (See the comment in the yaml code) Note that in order to feed the display with values from HA you need to have declared 'api:' in your yaml and also you need to add the device into HA. Mine auto found it once I flashed it and offered to add it. If you don't add it you won't get the values from HA. Instead you get NaN for each values (If you are reading this have encountered that, you have my sympathies as it drove me nuts!)
+ In the case of the strava stats, I renamed them in HA to covert Km to Miles (See the comment in the yaml code) Note that in order to feed the display with values from HA you need to have declared 'api:' in your yaml and also you need to add the device into HA. Mine auto found it once I flashed it and offered to add it. If you don't add it you won't get the values from HA. Instead you get NaN for each values (If you are reading this have=ing encountered that, you have my sympathies as it drove me nuts!)
  
  Finally, the lambda code in the yaml defines the (x,y) co-ordinates of where to print the bits. There is no WYSIWYG, this is like 80s comnputing. You will need to experiment a lot (and each time that means compile and flash the code) to get a layout you like (Unless you just follow mine)

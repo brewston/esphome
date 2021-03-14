@@ -20,13 +20,14 @@ I used :
    
 NodeMCU ESP8266 microcontroller eg 
     
- https://www.amazon.co.uk/YIYUAN-ESP8266-ESP-12E-Internet-Development-black/dp/B08MT97XCK/ref=sr_1_1_sspa?crid=D1C11Z218YSB&dchild=1&keywords=nodemcu+esp8266&qid=1615714875&sprefix=nodemc%2Caps%2C155&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzMFhLUVNFSVlGSFNYJmVuY3J5cHRlZElkPUEwODU3NDMzMk1DVEJRNDFGREg0WSZlbmNyeXB0ZWRBZElkPUEwMjI0OTM2MTBHRTNYNEVXQUM5RCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=
+https://www.amazon.co.uk/YIYUAN-ESP8266-ESP-12E-Internet-Development-black/dp/B08MT97XCK
  
  (buy a few, this won't end up being your only project)
  
    Waveshare 2.9" e-display eg
    
-   https://www.amazon.co.uk/Waveshare-Module-Resolution-Electronic-Raspberry/dp/B071LGVVL1/ref=sr_1_2?dchild=1&keywords=waveshare+2.9&qid=1615715037&sr=8-2
+   https://www.amazon.co.uk/gp/product/B071JFRV2S/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1
+   
    
    
    3D printed case (optional)
